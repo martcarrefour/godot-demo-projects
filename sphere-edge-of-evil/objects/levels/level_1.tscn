@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ylhwfgvg35f"]
+
+[ext_resource type="PackedScene" uid="uid://bf5tvbbtqep3r" path="res://objects/player/player.tscn" id="1_48eh2"]
+[ext_resource type="PackedScene" uid="uid://djrkrmvhgup5m" path="res://objects/square/square.tscn" id="2_yyo7j"]
+
+[node name="Level_1" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_48eh2")]
+position = Vector2(104, 128)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+scale = Vector2(1.0251, 1)
+zoom = Vector2(2, 2)
+
+[node name="Square" parent="." instance=ExtResource("2_yyo7j")]
+position = Vector2(214, 118)
+
+[node name="Square2" parent="." instance=ExtResource("2_yyo7j")]
+position = Vector2(62, 57)
+
+[node name="Square3" parent="." instance=ExtResource("2_yyo7j")]
+position = Vector2(38, 121)
+
+[node name="Square4" parent="." instance=ExtResource("2_yyo7j")]
+position = Vector2(202, 191)
+
+[node name="Square5" parent="." instance=ExtResource("2_yyo7j")]
+position = Vector2(149, 50)
+
+[node name="Square6" parent="." instance=ExtResource("2_yyo7j")]
+position = Vector2(268, 85)

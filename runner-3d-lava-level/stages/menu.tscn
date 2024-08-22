@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=3 uid="uid://o0e55qb0ohld"]
+
+[ext_resource type="Script" path="res://stages/menu.gd" id="1_12p7y"]
+[ext_resource type="Shader" uid="uid://blc4xtyckgkfk" path="res://shaders/grass.tres" id="1_xvxa4"]
+[ext_resource type="Texture2D" uid="uid://nc8tfo0kevra" path="res://icon.svg" id="2_w58d6"]
+[ext_resource type="Shader" path="res://shaders/grass_code.gdshader" id="3_22eqh"]
+[ext_resource type="Shader" uid="uid://b23g2btlmvucf" path="res://shaders/recolor.tres" id="4_tafxx"]
+[ext_resource type="Shader" uid="uid://5iina8ut0men" path="res://shaders/recolor2.tres" id="6_4ykjc"]
+[ext_resource type="Script" path="res://stages/icon.gd" id="7_40od7"]
+[ext_resource type="Shader" path="res://shaders/recolor_code.gdshader" id="8_88xhl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyx7f"]
+shader = ExtResource("1_xvxa4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ag7xd"]
+shader = ExtResource("3_22eqh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_td1xu"]
+shader = ExtResource("4_tafxx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ho376"]
+shader = ExtResource("6_4ykjc")
+shader_parameter/color = Color(0, 0.572549, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1sd0n"]
+shader = ExtResource("8_88xhl")
+shader_parameter/color = Color(0.801499, 0.2842, 0.374779, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_12p7y")
+
+[node name="IconVisualShader" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_uyx7f")
+position = Vector2(229, 226)
+texture = ExtResource("2_w58d6")
+
+[node name="IconCodeShader" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ag7xd")
+position = Vector2(462, 227)
+texture = ExtResource("2_w58d6")
+
+[node name="FragmentShader" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_td1xu")
+position = Vector2(694, 230)
+texture = ExtResource("2_w58d6")
+
+[node name="FragmentShader2" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ho376")
+position = Vector2(876, 230)
+texture = ExtResource("2_w58d6")
+script = ExtResource("7_40od7")
+
+[node name="FragmentShader3" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_1sd0n")
+position = Vector2(254, 428)
+texture = ExtResource("2_w58d6")
+script = ExtResource("7_40od7")
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 842.0
+offset_top = 307.0
+offset_right = 924.0
+offset_bottom = 367.0
+color = Color(0.211765, 0.239216, 0.321569, 1)
+
+[node name="ColorPickerButton2" type="ColorPickerButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 215.0
+offset_top = 519.0
+offset_right = 297.0
+offset_bottom = 579.0
+color = Color(0.211765, 0.239216, 0.321569, 1)
+
+[connection signal="color_changed" from="ColorPickerButton" to="FragmentShader2" method="_on_color_picker_button_color_changed"]
+[connection signal="color_changed" from="ColorPickerButton2" to="FragmentShader3" method="_on_color_picker_button_2_color_changed"]

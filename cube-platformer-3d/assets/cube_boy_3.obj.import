@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cji6x0txrcxbd"
+path="res://.godot/imported/cube_boy_3.obj-1979a509f5b9aeb66a9cbfd2e168370b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cube_boy_3.obj-1979a509f5b9aeb66a9cbfd2e168370b.mesh"]
+
+source_file="res://assets/cube_boy_3.obj"
+dest_files=["res://.godot/imported/cube_boy_3.obj-1979a509f5b9aeb66a9cbfd2e168370b.mesh", "res://.godot/imported/cube_boy_3.obj-1979a509f5b9aeb66a9cbfd2e168370b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

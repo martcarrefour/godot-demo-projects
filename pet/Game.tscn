@@ -1,0 +1,416 @@
+[gd_scene load_steps=32 format=3 uid="uid://bxoehgbsywyry"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_plx5a"]
+[ext_resource type="Texture2D" uid="uid://1vmepylwwbwu" path="res://assets/images/backgroundDefault.png" id="2_p6lwe"]
+[ext_resource type="Shader" path="res://background_scroll.gdshader" id="3_068ob"]
+[ext_resource type="Texture2D" uid="uid://dktc06ja4pcsn" path="res://assets/images/Skye.png" id="3_i2w8m"]
+[ext_resource type="Texture2D" uid="uid://ukgwrvii7m3c" path="res://assets/images/Forest.png" id="4_088ld"]
+[ext_resource type="PackedScene" uid="uid://b56ubhavyitiu" path="res://components/hat/hats_container.tscn" id="5_68b5s"]
+[ext_resource type="AudioStream" uid="uid://ch8ykd0gr3h38" path="res://assets/sound/barks/bark.ogg" id="8_2po5s"]
+[ext_resource type="Texture2D" uid="uid://cm2wjie4eq0hw" path="res://assets/images/Menu.png" id="8_yk22e"]
+[ext_resource type="Texture2D" uid="uid://cug40br80ew82" path="res://assets/images/ProgressBar.png" id="9_8vxeg"]
+[ext_resource type="FontFile" uid="uid://db67wim7kvchc" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_sev6d"]
+[ext_resource type="Texture2D" uid="uid://dhs7oxwsrxonq" path="res://assets/Dog.png" id="12_4xmo6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1nq3p"]
+shader = ExtResource("3_068ob")
+shader_parameter/speed = 0.008
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ahpp"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(0, 0, 144, 256)
+filter_clip = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6maol"]
+streams_count = 1
+stream_0/stream = ExtResource("8_2po5s")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuapg"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(144, 0, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8k4d"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(288, 0, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn4wh"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(0, 256, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhedl"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(144, 256, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10d3h"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(0, 256, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fts4c"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(288, 0, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp22y"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(144, 0, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akloa"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(0, 0, 144, 256)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_6hvtn"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.2, 0.233333, 0.266667, 0.366667),
+"transitions": PackedFloat32Array(0.554785, 0.554785, 0.554785, 0.554785, 0.554785, 0.554785, 0.554785, 0.554785, 0.554785),
+"update": 1,
+"values": [SubResource("AtlasTexture_2ahpp"), SubResource("AtlasTexture_fuapg"), SubResource("AtlasTexture_b8k4d"), SubResource("AtlasTexture_nn4wh"), SubResource("AtlasTexture_nhedl"), SubResource("AtlasTexture_10d3h"), SubResource("AtlasTexture_fts4c"), SubResource("AtlasTexture_dp22y"), SubResource("AtlasTexture_akloa")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nki0u"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(0, 0, 144, 256)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_d022o"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_nki0u")]
+}
+
+[sub_resource type="Animation" id="Animation_prmyp"]
+length = 0.001
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx5cc"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(0, 512, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88qff"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(144, 512, 144, 256)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5nce"]
+atlas = ExtResource("12_4xmo6")
+region = Rect2(288, 512, 144, 256)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_m1lt5"]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.266667, 1.3, 1.36667, 1.43333),
+"transitions": PackedFloat32Array(0.554785, 0.378929, 0.378929, 0.378929, 0.378929, 0.378929, 0.554785),
+"update": 1,
+"values": [SubResource("AtlasTexture_2ahpp"), SubResource("AtlasTexture_gx5cc"), SubResource("AtlasTexture_88qff"), SubResource("AtlasTexture_b5nce"), SubResource("AtlasTexture_88qff"), SubResource("AtlasTexture_gx5cc"), SubResource("AtlasTexture_2ahpp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yln1"]
+_data = {
+"Bark": SubResource("Animation_6hvtn"),
+"Ilde": SubResource("Animation_d022o"),
+"RESET": SubResource("Animation_prmyp"),
+"Smile": SubResource("Animation_m1lt5")
+}
+
+[node name="Node2D" type="CanvasLayer"]
+
+[node name="Game" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_plx5a")
+
+[node name="Background" type="TextureRect" parent="Game"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p6lwe")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "Default",
+"o_ex_p": "",
+"o_folder": "res://assets",
+"o_name": "background",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/ASEPRITE/Pet/Pet.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a3b7a521fd3fd4bc1ce362cf2f820d22"
+metadata/_edit_lock_ = true
+
+[node name="Window" type="Control" parent="Game/Background"]
+anchors_preset = 0
+offset_left = 82.0
+offset_top = 72.0
+offset_right = 129.0
+offset_bottom = 110.0
+
+[node name="Skye" type="TextureRect" parent="Game/Background/Window"]
+z_index = -1
+texture_filter = 1
+material = SubResource("ShaderMaterial_1nq3p")
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 40.0
+texture = ExtResource("3_i2w8m")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "Skye",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/ASEPRITE/Pet/Landscape.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c7a0a2ed0f2b55b14979128483692d09"
+
+[node name="Forest" type="TextureRect" parent="Game/Background/Window"]
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = -16.0
+offset_top = -1.0
+offset_right = 66.0
+offset_bottom = 34.0
+texture = ExtResource("4_088ld")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "Forest",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/ASEPRITE/Pet/Landscape.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c7a0a2ed0f2b55b14979128483692d09"
+
+[node name="Pet" type="TextureRect" parent="Game"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_2ahpp")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 0,
+"keep_anim_length": false,
+"layer": "Dog",
+"o_ex_p": "",
+"o_folder": "res://assets",
+"o_name": "",
+"only_visible": false,
+"player": "Game/Pet/AnimationPlayer",
+"slice": "",
+"source": "res://assets/ASEPRITE/Pet/Pet.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "38b61d9aaaed381ef73df502c72bbbf0"
+metadata/_edit_lock_ = true
+
+[node name="HatView" type="TextureRect" parent="Game/Pet"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -39.0
+offset_right = 24.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "hat7",
+"o_ex_p": "",
+"o_folder": "res://assets/hats",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/ASEPRITE/Pet/Hats.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "8862140f250a0d4f0aad82ecc883b1c2"
+
+[node name="SmileButton" type="TextureButton" parent="Game/Pet"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 123.0
+offset_right = 76.0
+offset_bottom = 138.0
+
+[node name="BarkButton" type="TextureButton" parent="Game/Pet"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 140.0
+offset_right = 72.0
+offset_bottom = 149.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Game/Pet/BarkButton"]
+stream = SubResource("AudioStreamRandomizer_6maol")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Game/Pet"]
+libraries = {
+"": SubResource("AnimationLibrary_1yln1")
+}
+autoplay = "Ilde"
+
+[node name="TextureButton" type="TextureButton" parent="Game"]
+layout_mode = 2
+offset_left = -8.0
+offset_top = -11.0
+offset_right = 62.0
+offset_bottom = 35.0
+size_flags_vertical = 4
+texture_normal = ExtResource("8_yk22e")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Game/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.5
+offset_top = -11.0
+offset_right = 17.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_sev6d")
+theme_override_font_sizes/font_size = 8
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Game"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = -9.0
+offset_right = 141.0
+offset_bottom = 31.0
+texture = ExtResource("9_8vxeg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 73)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="HatsContainer" parent="VBoxContainer/MarginContainer/ScrollContainer" instance=ExtResource("5_68b5s")]
+layout_mode = 2
+columns = 3
+
+[connection signal="pressed" from="Game/Pet/SmileButton" to="Game" method="_on_smile_button_pressed"]
+[connection signal="pressed" from="Game/Pet/BarkButton" to="Game" method="_on_bark_button_pressed"]

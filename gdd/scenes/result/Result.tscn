@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://fdlun3dswwmm"]
+
+[ext_resource type="Script" path="res://scenes/result/result.gd" id="1_m8nep"]
+
+[node name="Result" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8nep")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Item" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Question" type="Label" parent="ScrollContainer/Item"]
+layout_mode = 2
+text = "Text 1"
+
+[node name="Answer" type="Label" parent="ScrollContainer/Item/Question"]
+layout_mode = 2
+offset_top = 27.0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_vertical = 3
+text = "Text 1"

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d38fep2ccrmuh"]
+
+[ext_resource type="Script" path="res://scenes/objects/image.gd" id="1_sgxdr"]
+[ext_resource type="Texture2D" uid="uid://be2eilr0sgkg0" path="res://assets/art/bg.png" id="2_8urhs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vswl6"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_jlle0"]
+
+[node name="ImageContainer" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 0
+alignment = 1
+script = ExtResource("1_sgxdr")
+
+[node name="Panel" type="PanelContainer" parent="."]
+clip_children = 1
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_vswl6")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_jlle0")
+texture = ExtResource("2_8urhs")
+expand_mode = 4

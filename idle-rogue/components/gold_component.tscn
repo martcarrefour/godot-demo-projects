@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://biyw4m4vsltq"]
+
+[sub_resource type="GDScript" id="GDScript_78f8f"]
+script/source = "extends Node
+class_name GoldComponent
+
+
+@export var gold: int = 0
+@export var gold_coefficient: float = 1.0
+"
+
+[node name="GoldComponent" type="Node"]
+script = SubResource("GDScript_78f8f")

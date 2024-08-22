@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpcuiysm1w8ia"]
+
+[ext_resource type="Script" path="res://game_objects/platforms/platform.gd" id="1_3cqcf"]
+[ext_resource type="PackedScene" uid="uid://c2lynqx3ww2ro" path="res://game_objects/destruction_area.tscn" id="2_dbexl"]
+
+[node name="mirrored_90" type="Node3D"]
+script = ExtResource("1_3cqcf")
+
+[node name="90_1" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
+collision_layer = 4
+collision_mask = 2
+mode = 1
+spin_degrees = 90.0
+spin_sides = 10
+
+[node name="90_2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 0.2, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+use_collision = true
+collision_layer = 4
+collision_mask = 2
+mode = 1
+spin_degrees = 90.0
+spin_sides = 10
+
+[node name="DestructionArea" parent="." instance=ExtResource("2_dbexl")]

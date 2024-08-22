@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://csqsb2v8c52yy"]
+
+[ext_resource type="FontFile" uid="uid://nscl8abvxrwj" path="res://assets/PixelOperator8-Bold.ttf" id="1_8quad"]
+[ext_resource type="Script" path="res://stages/ui/hud/hud.gd" id="1_cl6rq"]
+[ext_resource type="Texture2D" uid="uid://d3cy66ht8eusd" path="res://assets/coin/mini_coin.png" id="2_nr5o5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew87d"]
+bg_color = Color(0.877616, 0.877616, 0.877616, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16, 0.130667, 0, 0.290196)
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_cl6rq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_ew87d")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+alignment = 2
+
+[node name="CoinsCount" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(0.28, 0.28, 0.28, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_8quad")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("2_nr5o5")
+expand_mode = 2

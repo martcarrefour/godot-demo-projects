@@ -1,0 +1,135 @@
+[gd_scene load_steps=12 format=3 uid="uid://d27s2i7p58lea"]
+
+[ext_resource type="Script" path="res://scenes/objects/button.gd" id="1_6otmi"]
+[ext_resource type="FontFile" uid="uid://b7g450fpnjneg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8ukjj"]
+[ext_resource type="Texture2D" uid="uid://4fdg1lxul4ut" path="res://assets/images/Button.png" id="3_4g732"]
+[ext_resource type="AudioStream" uid="uid://babix6nsukios" path="res://assets/music/click_2.ogg" id="4_omnaa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a0u0"]
+atlas = ExtResource("3_4g732")
+region = Rect2(0, 0, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b8a8"]
+atlas = ExtResource("3_4g732")
+region = Rect2(16, 0, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c0un"]
+atlas = ExtResource("3_4g732")
+region = Rect2(0, 16, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ilcc"]
+atlas = ExtResource("3_4g732")
+region = Rect2(16, 16, 16, 16)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_og7rv"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_4a0u0"), SubResource("AtlasTexture_7b8a8"), SubResource("AtlasTexture_3c0un"), SubResource("AtlasTexture_5ilcc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -5), Vector2(0, -2), Vector2(0, 0), Vector2(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_tb8ga"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_snk82"]
+_data = {
+"Press": SubResource("Animation_og7rv"),
+"RESET": SubResource("Animation_tb8ga")
+}
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(40, 40)
+focus_mode = 0
+action_mode = 0
+flat = true
+script = ExtResource("1_6otmi")
+
+[node name="Button" type="TextureRect" parent="."]
+clip_children = 2
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_4a0u0")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/images",
+"o_name": "",
+"only_visible": false,
+"player": "Button/AnimationPlayer",
+"slice": "",
+"source": "res://assets/images/RAW/Button.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": true,
+"output_section": true,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c1470115a9f2b4cfce0bed246d877af6"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
+libraries = {
+"": SubResource("AnimationLibrary_snk82")
+}
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.607843)
+theme_override_fonts/font = ExtResource("2_8ukjj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_omnaa")
+volume_db = -7.0
+mix_target = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

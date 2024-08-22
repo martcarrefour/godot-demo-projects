@@ -1,0 +1,147 @@
+[gd_scene load_steps=18 format=3 uid="uid://bgxlc3o65l0et"]
+
+[ext_resource type="Script" path="res://elements/enemy/enemy.gd" id="1_xpr81"]
+[ext_resource type="PackedScene" uid="uid://dwprtchm4elp4" path="res://components/health_component.tscn" id="3_wt8l6"]
+[ext_resource type="Texture2D" uid="uid://dg3l7xo5y3o3e" path="res://assets/art/hero.png" id="4_j12n6"]
+[ext_resource type="PackedScene" uid="uid://5ps324uo6qt2" path="res://components/loot_component.tscn" id="5_xwxkc"]
+[ext_resource type="PackedScene" uid="uid://clqt7qx6q3nv1" path="res://components/attack_component.tscn" id="8_n10d6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62ofd"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq4tw"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya8qh"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3lbg"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o61qv"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay1hd"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1sus"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a07ua"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eacym"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fmv4"]
+atlas = ExtResource("4_j12n6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i72j1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62ofd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq4tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya8qh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3lbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o61qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay1hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1sus")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a07ua")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eacym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fmv4")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iv6c3"]
+radius = 5.0
+height = 15.5
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemys"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_xpr81")
+loot_gold = 10
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_wt8l6")]
+position = Vector2(0, -80)
+max_health = 100.0
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(0, -28)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_i72j1")
+animation = &"Idle"
+autoplay = "Idle"
+flip_h = true
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/art",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "D:/prokushev.dev/ART/Hero.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7c07f9731c7e3e40809cd5c4e83c6d4f"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -32)
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_iv6c3")
+
+[node name="AttackComponent" parent="." instance=ExtResource("8_n10d6")]
+attack_speed = 2.0
+damage = 3.0
+auto_attack = true
+antagonist = 1
+
+[node name="LootComponent" parent="." instance=ExtResource("5_xwxkc")]

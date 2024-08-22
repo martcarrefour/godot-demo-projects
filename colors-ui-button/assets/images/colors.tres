@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="ColorsResource" load_steps=12 format=3 uid="uid://3bb1fol1gs0l"]
+
+[ext_resource type="Script" path="res://resources/color.gd" id="1_8tyf5"]
+[ext_resource type="Script" path="res://resources/colors.gd" id="2_8cvgg"]
+
+[sub_resource type="Resource" id="Resource_qlj7l"]
+script = ExtResource("1_8tyf5")
+title = "Red"
+hex = Color(1, 0.435294, 0.380392, 1)
+
+[sub_resource type="Resource" id="Resource_jxaod"]
+script = ExtResource("1_8tyf5")
+title = "Yellow"
+hex = Color(0.992157, 0.992157, 0.588235, 1)
+
+[sub_resource type="Resource" id="Resource_t4yml"]
+script = ExtResource("1_8tyf5")
+title = "Blue"
+hex = Color(0.682353, 0.776471, 0.811765, 1)
+
+[sub_resource type="Resource" id="Resource_it1pf"]
+script = ExtResource("1_8tyf5")
+title = "Purple"
+hex = Color(0.796078, 0.666667, 0.796078, 1)
+
+[sub_resource type="Resource" id="Resource_rboq1"]
+script = ExtResource("1_8tyf5")
+title = "Green"
+hex = Color(0.466667, 0.866667, 0.466667, 1)
+
+[sub_resource type="Resource" id="Resource_w881m"]
+script = ExtResource("1_8tyf5")
+title = "Pink"
+hex = Color(1, 0.717647, 0.698039, 1)
+
+[sub_resource type="Resource" id="Resource_ckqiv"]
+script = ExtResource("1_8tyf5")
+title = "Black"
+hex = Color(0.333333, 0.333333, 0.333333, 1)
+
+[sub_resource type="Resource" id="Resource_yb3om"]
+script = ExtResource("1_8tyf5")
+title = "White"
+hex = Color(0.992157, 0.992157, 0.992157, 1)
+
+[sub_resource type="Resource" id="Resource_0v0fr"]
+script = ExtResource("1_8tyf5")
+title = "EveryColor"
+hex = Color(0.941176, 0.917647, 0.839216, 1)
+
+[resource]
+script = ExtResource("2_8cvgg")
+colors = Array[ExtResource("1_8tyf5")]([SubResource("Resource_qlj7l"), SubResource("Resource_jxaod"), SubResource("Resource_t4yml"), SubResource("Resource_it1pf"), SubResource("Resource_rboq1"), SubResource("Resource_w881m"), SubResource("Resource_ckqiv"), SubResource("Resource_yb3om"), SubResource("Resource_0v0fr")])

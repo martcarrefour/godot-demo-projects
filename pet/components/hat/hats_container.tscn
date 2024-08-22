@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b56ubhavyitiu"]
+
+[ext_resource type="Script" path="res://components/hat/hats_container.gd" id="1_4rkmq"]
+
+[node name="HatsContainer" type="GridContainer"]
+custom_minimum_size = Vector2(0, 65)
+offset_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+columns = 4
+script = ExtResource("1_4rkmq")

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d365ayoq161vr"
+path="res://.godot/imported/BallSpell.aseprite-6cbc3cdc610b4fc9be3002ce5327f01b.res"
+
+[deps]
+
+source_file="res://assets/art/BallSpell.aseprite"
+dest_files=["res://.godot/imported/BallSpell.aseprite-6cbc3cdc610b4fc9be3002ce5327f01b.res"]
+
+[params]
+

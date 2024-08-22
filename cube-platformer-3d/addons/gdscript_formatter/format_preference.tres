@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://t602wre5s424"]
+
+[ext_resource type="Script" path="res://addons/gdscript_formatter/scripts/preference.gd" id="1_hoeux"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_48541"]
+alt_pressed = true
+shift_pressed = true
+pressed = true
+keycode = 70
+
+[sub_resource type="Shortcut" id="Shortcut_7hv6n"]
+events = [SubResource("InputEventKey_48541")]
+
+[resource]
+script = ExtResource("1_hoeux")
+line_length = 175
+format_on_save = false
+shortcut = SubResource("Shortcut_7hv6n")
+fast_but_unsafe = false
+gdformat_command = "gdformat"
+pip_command = "pip"

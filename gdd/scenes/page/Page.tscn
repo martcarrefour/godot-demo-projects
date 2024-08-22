@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://c407yppmmwje3"]
+
+[ext_resource type="Script" path="res://scenes/page/page.gd" id="1_yfg1h"]
+
+[node name="Page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yfg1h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Container" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="MarginContainer/Container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Exit"
+
+[node name="ListContainer" type="Control" parent="MarginContainer/Container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/Container"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="PreviousPage" type="Button" parent="MarginContainer/Container/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+text = "Назад"
+
+[node name="NextPage" type="Button" parent="MarginContainer/Container/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Далее"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+
+[connection signal="pressed" from="MarginContainer/Container/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Container/Buttons/PreviousPage" to="." method="_on_previous_page_pressed"]
+[connection signal="pressed" from="MarginContainer/Container/Buttons/NextPage" to="." method="_on_next_page_button_pressed"]

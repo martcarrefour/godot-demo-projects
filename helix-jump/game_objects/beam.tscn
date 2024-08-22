@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b44115cqwctcl"]
+
+[node name="beam" type="CSGCylinder3D"]
+use_collision = true
+collision_layer = 12
+collision_mask = 6
+height = 1.0
+sides = 30

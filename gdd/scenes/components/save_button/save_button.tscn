@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ph3w3jeunwy8"]
+
+[ext_resource type="Script" path="res://scenes/components/save_button/save_button.gd" id="1_ogo4j"]
+
+[node name="SaveButton" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+script = ExtResource("1_ogo4j")
+
+[node name="SaveButton" type="Button" parent="."]
+layout_mode = 2
+text = "Сохранить"
+
+[node name="DeleteButton" type="Button" parent="."]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "X"

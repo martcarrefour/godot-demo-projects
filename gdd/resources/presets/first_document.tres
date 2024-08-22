@@ -1,0 +1,209 @@
+[gd_resource type="Resource" script_class="GDDResource" load_steps=46 format=3 uid="uid://bymktgkwlftk8"]
+
+[ext_resource type="Script" path="res://resources/question.gd" id="1_rjwbr"]
+[ext_resource type="Script" path="res://resources/gdd.gd" id="1_uicch"]
+[ext_resource type="Script" path="res://resources/page.gd" id="2_j62r1"]
+
+[sub_resource type="Resource" id="Resource_f0tad"]
+script = ExtResource("1_rjwbr")
+question_text = "Название игры"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_pernp"]
+script = ExtResource("1_rjwbr")
+question_text = "Платформы"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_db8cf"]
+script = ExtResource("1_rjwbr")
+question_text = "Возраст целевой аудитории"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_aaype"]
+script = ExtResource("1_rjwbr")
+question_text = "Возрастной рейтинг"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_gthgg"]
+script = ExtResource("1_rjwbr")
+question_text = " Планируемая дата публикации"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_frvqw"]
+script = ExtResource("1_rjwbr")
+question_text = "Конкуренты и вдохновители"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_630wd"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_f0tad"), SubResource("Resource_pernp"), SubResource("Resource_db8cf"), SubResource("Resource_aaype"), SubResource("Resource_gthgg"), SubResource("Resource_frvqw")])
+
+[sub_resource type="Resource" id="Resource_0rvbr"]
+script = ExtResource("1_rjwbr")
+question_text = "Начало"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_5gk1n"]
+script = ExtResource("1_rjwbr")
+question_text = "Середина"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_ewq4p"]
+script = ExtResource("1_rjwbr")
+question_text = "Концовка"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_i6akk"]
+script = ExtResource("1_rjwbr")
+question_text = "Игровой процесс/поток"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_h15fg"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_0rvbr"), SubResource("Resource_5gk1n"), SubResource("Resource_ewq4p"), SubResource("Resource_i6akk")])
+
+[sub_resource type="Resource" id="Resource_acts5"]
+script = ExtResource("1_rjwbr")
+question_text = "Предыстория героя"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_fubef"]
+script = ExtResource("1_rjwbr")
+question_text = "Навыки и типаж"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_lwcwl"]
+script = ExtResource("1_rjwbr")
+question_text = "Особенности"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_w03vb"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_acts5"), SubResource("Resource_fubef"), SubResource("Resource_lwcwl")])
+
+[sub_resource type="Resource" id="Resource_q4g02"]
+script = ExtResource("1_rjwbr")
+question_text = "Описание уровней"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_tljd1"]
+script = ExtResource("1_rjwbr")
+question_text = "Фишки и особенности игры"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_osh4k"]
+script = ExtResource("1_rjwbr")
+question_text = "Технические особенности"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_fbdn7"]
+script = ExtResource("1_rjwbr")
+question_text = "Мультиплеер"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_2h50y"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_q4g02"), SubResource("Resource_tljd1"), SubResource("Resource_osh4k"), SubResource("Resource_fbdn7")])
+
+[sub_resource type="Resource" id="Resource_gagsv"]
+script = ExtResource("1_rjwbr")
+question_text = "Описание мира"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_0vxkx"]
+script = ExtResource("1_rjwbr")
+question_text = "Локации"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_xfxfm"]
+script = ExtResource("1_rjwbr")
+question_text = " Музыка и настроение"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_6mfta"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_gagsv"), SubResource("Resource_0vxkx"), SubResource("Resource_xfxfm")])
+
+[sub_resource type="Resource" id="Resource_2ynr7"]
+script = ExtResource("1_rjwbr")
+question_text = "Эмоции и атмосфера"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_sdppe"]
+script = ExtResource("1_rjwbr")
+question_text = "Музыка и звуки"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_jf0pk"]
+script = ExtResource("1_rjwbr")
+question_text = "Навигация"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_fwcrm"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_2ynr7"), SubResource("Resource_sdppe"), SubResource("Resource_jf0pk")])
+
+[sub_resource type="Resource" id="Resource_53i50"]
+script = ExtResource("1_rjwbr")
+question_text = "Механики"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_0uu5d"]
+script = ExtResource("1_rjwbr")
+question_text = "Опасности"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_ghg75"]
+script = ExtResource("1_rjwbr")
+question_text = "Предметы и бонусы"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_ytqd8"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_53i50"), SubResource("Resource_0uu5d"), SubResource("Resource_ghg75")])
+
+[sub_resource type="Resource" id="Resource_d7u85"]
+script = ExtResource("1_rjwbr")
+question_text = "Враги"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_osriv"]
+script = ExtResource("1_rjwbr")
+question_text = "Боссы"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_a1ktf"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_d7u85"), SubResource("Resource_osriv")])
+
+[sub_resource type="Resource" id="Resource_s77eq"]
+script = ExtResource("1_rjwbr")
+question_text = "Тип роликов"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_3tclo"]
+script = ExtResource("1_rjwbr")
+question_text = "Моменты показа"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_s5qj3"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_s77eq"), SubResource("Resource_3tclo")])
+
+[sub_resource type="Resource" id="Resource_3ja68"]
+script = ExtResource("1_rjwbr")
+question_text = "Дополнительные режимы"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_k05sb"]
+script = ExtResource("1_rjwbr")
+question_text = "DLC и планы по поддержке"
+answer_text = ""
+
+[sub_resource type="Resource" id="Resource_rsyxu"]
+script = ExtResource("2_j62r1")
+questions = Array[ExtResource("1_rjwbr")]([SubResource("Resource_3ja68"), SubResource("Resource_k05sb"), null])
+
+[resource]
+script = ExtResource("1_uicch")
+pages = Array[ExtResource("2_j62r1")]([SubResource("Resource_630wd"), SubResource("Resource_h15fg"), SubResource("Resource_w03vb"), SubResource("Resource_2h50y"), SubResource("Resource_6mfta"), SubResource("Resource_fwcrm"), SubResource("Resource_ytqd8"), SubResource("Resource_a1ktf"), SubResource("Resource_s5qj3"), SubResource("Resource_rsyxu")])

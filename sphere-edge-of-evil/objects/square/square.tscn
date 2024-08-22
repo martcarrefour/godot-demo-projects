@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://djrkrmvhgup5m"]
+
+[ext_resource type="Texture2D" uid="uid://cg8i4x7nqsd6u" path="res://assets/square.png" id="1_rg6r5"]
+[ext_resource type="PackedScene" uid="uid://cw1pdtp0swjq7" path="res://objects/components/hitbox_comonent.tscn" id="2_tlbj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmsdt"]
+size = Vector2(16, 16)
+
+[node name="Square" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_rg6r5")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/raw/square.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e7ce21fce4dcb9b6441882c24287e87e"
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gmsdt")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_tlbj3")]
+collision_layer = 0
+collision_mask = 8

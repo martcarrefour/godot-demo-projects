@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://nxhcmdmpwrvr"]
+
+[ext_resource type="Script" path="res://game_objects/ball.gd" id="1_vvpbc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4f82e"]
+radius = 0.2
+
+[node name="Ball" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.5, 0)
+collision_layer = 2
+collision_mask = 4
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_vvpbc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_4f82e")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+use_collision = true
+radius = 0.2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

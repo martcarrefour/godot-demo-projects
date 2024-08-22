@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhbud0j4draxc"]
+
+[ext_resource type="Script" path="res://game_objects/tower.gd" id="1_g8c0u"]
+[ext_resource type="PackedScene" uid="uid://bpcuiysm1w8ia" path="res://game_objects/platforms/variants/mirrored_90.tscn" id="2_krv0p"]
+[ext_resource type="PackedScene" uid="uid://b44115cqwctcl" path="res://game_objects/beam.tscn" id="3_kqn06"]
+[ext_resource type="PackedScene" uid="uid://nxhcmdmpwrvr" path="res://game_objects/ball.tscn" id="4_3fctr"]
+[ext_resource type="PackedScene" uid="uid://1o0hbdip4rqa" path="res://game_objects/platforms/start_platform.tscn" id="4_te5je"]
+[ext_resource type="PackedScene" uid="uid://th6o47q7bagj" path="res://game_objects/platforms/finish_platform.tscn" id="5_rgqta"]
+
+[node name="Tower" type="Node3D"]
+script = ExtResource("1_g8c0u")
+_level_count = 20
+_packed_platforms = Array[PackedScene]([ExtResource("2_krv0p"), ExtResource("2_krv0p"), ExtResource("2_krv0p"), ExtResource("2_krv0p"), ExtResource("2_krv0p")])
+
+[node name="Beam" parent="." instance=ExtResource("3_kqn06")]
+
+[node name="FinishPlatform" parent="." instance=ExtResource("5_rgqta")]
+
+[node name="StartPlatform" parent="." instance=ExtResource("4_te5je")]
+
+[node name="Ball" parent="." instance=ExtResource("4_3fctr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.75)
+
+[node name="Camera3D" type="Camera3D" parent="Ball"]
+transform = Transform3D(1, 0, 0, 0, 0.999719, 0.0236996, 0, -0.0236996, 0.999719, 0, 1.6, 20)
+v_offset = 2.0
+current = true

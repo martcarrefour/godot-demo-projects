@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bxirdoxcua7mj"
+path="res://.godot/imported/square.aseprite-95e2ee5371f963155225c398dbf7bbca.res"
+
+[deps]
+
+source_file="res://assets/raw/square.aseprite"
+dest_files=["res://.godot/imported/square.aseprite-95e2ee5371f963155225c398dbf7bbca.res"]
+
+[params]
+

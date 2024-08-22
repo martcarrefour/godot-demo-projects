@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://camraw81c748w"
+path="res://.godot/imported/cube_boy_1.obj-3423c535952060dc4d0451bb6920b88b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cube_boy_1.obj-3423c535952060dc4d0451bb6920b88b.mesh"]
+
+source_file="res://assets/cube_boy_1.obj"
+dest_files=["res://.godot/imported/cube_boy_1.obj-3423c535952060dc4d0451bb6920b88b.mesh", "res://.godot/imported/cube_boy_1.obj-3423c535952060dc4d0451bb6920b88b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

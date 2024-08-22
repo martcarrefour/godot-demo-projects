@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtkwri62aris5"]
+
+[ext_resource type="Script" path="res://elements/portal.gd" id="1_amiii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1uh2"]
+size = Vector2(17, 48)
+
+[node name="NextLevelPorta" type="Area2D"]
+script = ExtResource("1_amiii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(547.5, 85)
+shape = SubResource("RectangleShape2D_p1uh2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

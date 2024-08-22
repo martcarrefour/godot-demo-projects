@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://owgrmhkomiqq"]
+
+[ext_resource type="Texture2D" uid="uid://dj7e1xhy34swf" path="res://assets/images/hat_background.png" id="1_ce2sk"]
+[ext_resource type="Texture2D" uid="uid://sojwatx4631p" path="res://assets/images/hat_background_hover.png" id="2_n8ra1"]
+[ext_resource type="Script" path="res://components/hat/hat_button.gd" id="3_dflqw"]
+[ext_resource type="AudioStream" uid="uid://cwlpjnrjbfdo0" path="res://assets/sound/my_switch_v2.ogg" id="4_fwj4e"]
+
+[node name="HatButton" type="TextureButton"]
+offset_right = 35.0
+offset_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("1_ce2sk")
+texture_pressed = ExtResource("2_n8ra1")
+texture_hover = ExtResource("2_n8ra1")
+texture_disabled = ExtResource("2_n8ra1")
+texture_focused = ExtResource("2_n8ra1")
+stretch_mode = 5
+script = ExtResource("3_dflqw")
+sound = ExtResource("4_fwj4e")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://os6js8j0lcxs"]
+
+[ext_resource type="PackedScene" uid="uid://dp2bpxyefn8xx" path="res://elements/background.tscn" id="1_6tj2o"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_sd4p3"]
+[ext_resource type="PackedScene" uid="uid://q85xl4ls2tgu" path="res://elements/hero/hero.tscn" id="2_cjgqf"]
+
+[sub_resource type="GDScript" id="GDScript_csq8y"]
+script/source = "extends Label
+
+
+func _ready() -> void:
+	Events.gold_changed.connect(update_gold)
+
+
+func update_gold(gold: int) -> void:
+	text = \"Gold: %d\" % gold
+"
+
+[sub_resource type="GDScript" id="GDScript_k60rg"]
+script/source = "extends Label
+
+
+func _ready() -> void:
+	var tween = create_tween()
+	await tween.tween_property(self, \"modulate:a\", 0, 2).finished
+	hide()
+"
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_sd4p3")
+
+[node name="Background" parent="." instance=ExtResource("1_6tj2o")]
+
+[node name="Hero" parent="." instance=ExtResource("2_cjgqf")]
+position = Vector2(75, 167)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+script = SubResource("GDScript_csq8y")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(382, 126)
+
+[node name="Hint" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 240.0
+offset_right = 170.0
+offset_bottom = 263.0
+text = "Mouse Left - attack"
+script = SubResource("GDScript_k60rg")
+
+[node name="HealButton" type="Button" parent="."]
+offset_top = 29.0
+offset_right = 78.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 10
+text = "Heal: 100 gold"
+
+[connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]

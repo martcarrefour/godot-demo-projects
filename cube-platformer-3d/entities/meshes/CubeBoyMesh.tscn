@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://o0whto65o2nd"]
+
+[ext_resource type="ArrayMesh" uid="uid://camraw81c748w" path="res://assets/cube_boy_1.obj" id="1_5hwfm"]
+[ext_resource type="ArrayMesh" uid="uid://dq8846o7m0eoj" path="res://assets/cube_boy_2.obj" id="2_eok8v"]
+[ext_resource type="ArrayMesh" uid="uid://cji6x0txrcxbd" path="res://assets/cube_boy_3.obj" id="3_ii7bk"]
+
+[node name="CubeBoyMesh" type="Node3D"]
+
+[node name="Idle" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_5hwfm")
+
+[node name="LeftStep" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = ExtResource("2_eok8v")
+
+[node name="RightStep" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = ExtResource("3_ii7bk")

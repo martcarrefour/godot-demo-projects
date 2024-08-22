@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmpimle55qggl"]
+
+[ext_resource type="Script" path="res://scenes/components/text_input/text_input_with_label.gd" id="1_121nx"]
+[ext_resource type="Script" path="res://scenes/components/text_input/text-input-field.gd" id="1_fuyus"]
+
+[node name="TextInputWithLabel" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_121nx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "DefaultLabel"
+
+[node name="TextInputField" type="TextEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+scroll_fit_content_height = true
+script = ExtResource("1_fuyus")
+
+[connection signal="text_changed" from="TextInputField" to="." method="_on_text_input_field_text_changed"]
+[connection signal="text_changed" from="TextInputField" to="TextInputField" method="_on_text_changed"]

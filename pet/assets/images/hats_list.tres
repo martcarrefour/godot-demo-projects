@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="HastsResource" load_steps=11 format=3 uid="uid://bbg7t2h3vujk6"]
+
+[ext_resource type="Script" path="res://components/hat/hats_resource.gd" id="1_elwd7"]
+[ext_resource type="Texture2D" uid="uid://doalgy62ed4lk" path="res://assets/images/hats/colors/red.png" id="2_opdls"]
+[ext_resource type="Texture2D" uid="uid://ci3yrn8im3osu" path="res://assets/images/hats/colors/yellow.png" id="3_pjs8t"]
+[ext_resource type="Texture2D" uid="uid://bfuxs3p8sjmsf" path="res://assets/images/hats/colors/purple.png" id="4_0ojbg"]
+[ext_resource type="Texture2D" uid="uid://c68g3luu0sq17" path="res://assets/images/hats/colors/blue.png" id="4_gg38u"]
+[ext_resource type="Texture2D" uid="uid://4i41j02rpvqs" path="res://assets/images/hats/colors/green.png" id="5_81jmn"]
+[ext_resource type="Texture2D" uid="uid://crf5cqah3gbyr" path="res://assets/images/hats/colors/pink.png" id="6_hlmyg"]
+[ext_resource type="Texture2D" uid="uid://iwvomemtyhxy" path="res://assets/images/hats/colors/black.png" id="7_ystrx"]
+[ext_resource type="Texture2D" uid="uid://cw726ircl81kg" path="res://assets/images/hats/colors/white.png" id="8_i3jfa"]
+[ext_resource type="Texture2D" uid="uid://x8a17i5p6xj1" path="res://assets/images/hats/hat8.png" id="8_ionmj"]
+
+[resource]
+script = ExtResource("1_elwd7")
+hats = Array[CompressedTexture2D]([ExtResource("8_ionmj"), ExtResource("2_opdls"), ExtResource("3_pjs8t"), ExtResource("4_gg38u"), ExtResource("4_0ojbg"), ExtResource("5_81jmn"), ExtResource("6_hlmyg"), ExtResource("7_ystrx"), ExtResource("8_i3jfa")])

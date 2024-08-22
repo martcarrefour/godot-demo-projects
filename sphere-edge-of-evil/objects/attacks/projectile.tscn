@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0w537fkk0cnu"]
+
+[ext_resource type="Script" path="res://objects/player/projectile.gd" id="1_wqxa5"]
+[ext_resource type="Texture2D" uid="uid://ch006gak7rjtc" path="res://assets/player.png" id="2_ba7g8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pxcij"]
+radius = 5.0
+
+[node name="Projectile" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_wqxa5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pxcij")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_ba7g8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

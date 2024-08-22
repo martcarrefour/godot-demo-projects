@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqvwvkchx1gof"]
+
+[ext_resource type="PackedScene" uid="uid://bgxlc3o65l0et" path="res://elements/enemy/enemy.tscn" id="1_gkqqe"]
+
+[node name="Enemys" type="Node2D"]
+position = Vector2(408, 114)
+
+[node name="Enemy1" parent="." instance=ExtResource("1_gkqqe")]
+loot_gold = 33
+
+[node name="Enemy2" parent="." instance=ExtResource("1_gkqqe")]
+position = Vector2(-84, 49)
+loot_gold = 33
+
+[node name="Enemy3" parent="." instance=ExtResource("1_gkqqe")]
+position = Vector2(-14, 107)
+loot_gold = 35

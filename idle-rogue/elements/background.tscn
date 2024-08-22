@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp2bpxyefn8xx"]
+
+[ext_resource type="Texture2D" uid="uid://dx38tsf23vfmj" path="res://assets/art/ground.png" id="1_qysd4"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("1_qysd4")
+centered = false
+flip_v = true

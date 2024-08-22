@@ -1,0 +1,196 @@
+[gd_scene load_steps=3 format=3 uid="uid://dom74jv2t4ovc"]
+
+[ext_resource type="Script" path="res://calc.gd" id="1_nq1hw"]
+
+[sub_resource type="Theme" id="Theme_l4k8h"]
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="Calc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nq1hw")
+
+[node name="CenterContainer" type="CenterContainer" parent="Calc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Calc/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "GoalFit"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "( beta version)"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="WeightLabel" type="Label" parent="Calc/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Weight "
+
+[node name="WeightInput" type="LineEdit" parent="Calc/CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+placeholder_text = "75kg "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HeightLabel" type="Label" parent="Calc/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Height "
+
+[node name="HeightInput" type="LineEdit" parent="Calc/CenterContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+placeholder_text = "180cm"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AgeLabel" type="Label" parent="Calc/CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Age"
+
+[node name="AgeInput" type="LineEdit" parent="Calc/CenterContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+placeholder_text = "Age"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_l4k8h")
+
+[node name="GenderLabel" type="Label" parent="Calc/CenterContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gender"
+
+[node name="GenderInput" type="OptionButton" parent="Calc/CenterContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+item_count = 2
+popup/item_0/text = "Male "
+popup/item_1/text = "Female"
+popup/item_1/id = 1
+
+[node name="PhysicalActivityLevel" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_l4k8h")
+
+[node name="GenderLabel" type="Label" parent="Calc/CenterContainer/VBoxContainer/PhysicalActivityLevel"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Physical Activity Level "
+
+[node name="PhysicalActivityLevelInput" type="OptionButton" parent="Calc/CenterContainer/VBoxContainer/PhysicalActivityLevel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+item_count = 4
+popup/item_0/text = "Sedentary (coefficient 1.2)"
+popup/item_1/text = "Lightly Active (coefficient 1.375)"
+popup/item_1/id = 1
+popup/item_2/text = "Moderately Active (coefficient 1.55)"
+popup/item_2/id = 2
+popup/item_3/text = "Very Active (coefficient 1.725)"
+popup/item_3/id = 3
+
+[node name="HSeparator" type="HSeparator" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PhysicalActivityLevel2" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_l4k8h")
+
+[node name="TargetWeightLabel" type="Label" parent="Calc/CenterContainer/VBoxContainer/PhysicalActivityLevel2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Target Weight "
+
+[node name="TargetWeightInput" type="LineEdit" parent="Calc/CenterContainer/VBoxContainer/PhysicalActivityLevel2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+placeholder_text = "70kg"
+
+[node name="Duration" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_l4k8h")
+
+[node name="DurationLabel" type="Label" parent="Calc/CenterContainer/VBoxContainer/Duration"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Duration
+"
+
+[node name="DurationInput" type="LineEdit" parent="Calc/CenterContainer/VBoxContainer/Duration"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+placeholder_text = "60 days"
+
+[node name="HSeparator2" type="HSeparator" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Duration2" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_l4k8h")
+
+[node name="Result" type="Label" parent="Calc/CenterContainer/VBoxContainer/Duration2"]
+layout_mode = 2
+text = "Result
+"
+horizontal_alignment = 1
+
+[node name="ResultText" type="Label" parent="Calc/CenterContainer/VBoxContainer/Duration2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Duration3" type="HBoxContainer" parent="Calc/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_l4k8h")
+
+[node name="WarningText" type="Label" parent="Calc/CenterContainer/VBoxContainer/Duration3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Warning
+"
+horizontal_alignment = 1
+
+[node name="WarningColor" type="ColorRect" parent="Calc/CenterContainer/VBoxContainer/Duration3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2

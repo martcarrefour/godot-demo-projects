@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://uk7wmf4f2tgg"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_k5ukk"]
+[ext_resource type="PackedScene" uid="uid://dhbud0j4draxc" path="res://game_objects/tower.tscn" id="2_lf0fh"]
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_k5ukk")
+
+[node name="Tower" parent="." instance=ExtResource("2_lf0fh")]
+_level_count = 10
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.669585, 3.2466e-08, -0.742736, 0.742736, 2.92685e-08, -0.669585, -2.55716e-15, -1, -4.37114e-08, 43.8151, 49.7008, 21.0132)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2lynqx3ww2ro"]
+
+[ext_resource type="Script" path="res://game_objects/destruction_area.gd" id="1_r0fl4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_axofw"]
+height = 0.1
+radius = 1.0
+
+[node name="DestructionArea" type="Area3D"]
+disable_mode = 2
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_r0fl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_axofw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

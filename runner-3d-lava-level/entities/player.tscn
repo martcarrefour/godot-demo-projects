@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxamqnb2ed0th"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_fipi5"]
+[ext_resource type="AudioStream" uid="uid://cf7vjm8a4wdw2" path="res://assets/audio/step1.ogg" id="2_rmjwu"]
+[ext_resource type="AudioStream" uid="uid://bl6iei1ft8uh" path="res://assets/audio/step2.ogg" id="3_dktnv"]
+[ext_resource type="AudioStream" uid="uid://bmi4x8n2w2e86" path="res://assets/audio/step3.ogg" id="4_a0yrf"]
+[ext_resource type="AudioStream" uid="uid://crgyk5por4p17" path="res://assets/audio/step4.ogg" id="5_2rn81"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iy8rc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_467s3"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uebqj"]
+random_volume_offset_db = 1.0
+streams_count = 4
+stream_0/stream = ExtResource("2_rmjwu")
+stream_1/stream = ExtResource("3_dktnv")
+stream_2/stream = ExtResource("4_a0yrf")
+stream_3/stream = ExtResource("5_2rn81")
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 31)
+script = ExtResource("1_fipi5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape3D_iy8rc")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="HeadCamera" type="Camera3D" parent="Head"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_467s3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_uebqj")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://crtut4ksk5pmk"]
+
+[node name="Hat" type="TextureRect"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -12.0
+offset_right = 11.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "hat8",
+"o_ex_p": "",
+"o_folder": "res://assets/images/hats",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/ASEPRITE/Pet/Hats.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "0f25749c72fa365a162f34a2f71d20e9"

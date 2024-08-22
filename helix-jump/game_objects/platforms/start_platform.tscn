@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://1o0hbdip4rqa"]
+
+[node name="StartPlatform" type="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
+collision_layer = 4
+collision_mask = 2
+mode = 1
+spin_degrees = 270.0
+spin_sides = 10

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://run3c53ygfbx"
+path="res://.godot/imported/HatBackground.aseprite-97482561893e4f554285ffb493904f66.res"
+
+[deps]
+
+source_file="res://assets/ASEPRITE/Pet/HatBackground.aseprite"
+dest_files=["res://.godot/imported/HatBackground.aseprite-97482561893e4f554285ffb493904f66.res"]
+
+[params]
+

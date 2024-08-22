@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cti6pmnltsfnh"]
+
+[ext_resource type="Texture2D" uid="uid://bf8f10vmrpwkr" path="res://assets/images/Clouds/1.png" id="1_2sh7k"]
+[ext_resource type="Texture2D" uid="uid://dsc4hgq8nyg0p" path="res://assets/images/Clouds/2.png" id="2_cxd8o"]
+[ext_resource type="Texture2D" uid="uid://bx5emw1j3q7lj" path="res://assets/images/Clouds/3.png" id="3_g3ry2"]
+[ext_resource type="Texture2D" uid="uid://ddvbn0ma1wm0g" path="res://assets/images/Clouds/4.png" id="4_7bjvx"]
+
+[sub_resource type="Animation" id="Animation_wkq3d"]
+resource_name = "default"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cjqxa"]
+_data = {
+"default": SubResource("Animation_wkq3d")
+}
+
+[node name="Background" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("1_2sh7k")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_cxd8o")
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.596078)
+layout_mode = 2
+texture = ExtResource("4_7bjvx")
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.690196)
+layout_mode = 2
+texture = ExtResource("3_g3ry2")
+stretch_mode = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cjqxa")
+}
